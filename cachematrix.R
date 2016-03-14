@@ -1,21 +1,23 @@
-tinv## Put comments here that give an overall description of what your
+## Put comments here that give an overall description of what your
 ## functions do
 
 ## Write a short comment describing this function
 
 makeCacheMatrix <- function(x = matrix()) {
+# use `<<-` to assign a value to an object in an environment 
+# different from the current environment.
         inv <- NULL
         set <- function(y) {
                 x <<- y
                 inv <<- NULL
         }
         get <- function() x
-        setInv <- function(inv) inv <<- inv
-        getInv <- function() inv
+        setInv <- function(inv) inv <<- inv  # assign inv matrix if existed
+        getInv <- function() inv  # retrieve inv matrix
         list(set = set,
              get = get,
              setInv = setInv,
-             getInv = getInv)
+             getInv = getInv)  #input for cacheSolve
 }
 
 
